@@ -132,6 +132,7 @@
 				TargetAttributes = {
 					969B7F781EED71EA00B01D9E = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 6H6YJFF77T;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -141,6 +142,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -348,11 +350,12 @@
 			baseConfigurationReference = 7A7BE475B7009CAA9044E074 /* Pods-VideoTransparentBackground.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6H6YJFF77T;
 				INFOPLIST_FILE = VideoTransparentBackground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andreygordeev.VideoTransparentBackground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -361,11 +364,12 @@
 			baseConfigurationReference = AABF62EEC8EB3F5C2C70E167 /* Pods-VideoTransparentBackground.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6H6YJFF77T;
 				INFOPLIST_FILE = VideoTransparentBackground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andreygordeev.VideoTransparentBackground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

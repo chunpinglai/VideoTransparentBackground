@@ -69,7 +69,7 @@ class VideoView: GPUImageView {
         filter.addTarget(self)
     }
 
-    func play() {
+    @objc func play() {
         guard !isPlaying else { return }
         player.seek(to: kCMTimeZero)
         player.play()
@@ -81,7 +81,7 @@ class VideoView: GPUImageView {
         isPlaying = false
     }
 
-    func playerDidFinishPlaying(_ notification: Notification) {
+    @objc func playerDidFinishPlaying(_ notification: Notification) {
         guard player.currentItem == notification.object as? AVPlayerItem else { return }
         // Call player.seek(to: kCMTimeZero) if you want to make the first frame visible after playback is completed.
         isPlaying = false
@@ -91,7 +91,7 @@ class VideoView: GPUImageView {
         let asset = AVURLAsset(url: url)
         let assetGenerator = AVAssetImageGenerator(asset: asset)
         assetGenerator.appliesPreferredTrackTransform = true
-        assetGenerator.apertureMode = AVAssetImageGeneratorApertureModeEncodedPixels
+        assetGenerator.apertureMode = AVAssetImageGeneratorApertureMode.encodedPixels
         let time = CMTimeMakeWithSeconds(1.0, 1)
         var actualTime: CMTime = CMTimeMake(0, 0)
         let cgImage = try? assetGenerator.copyCGImage(at: time, actualTime: &actualTime)
@@ -109,7 +109,7 @@ class VideoView: GPUImageView {
             constraint.constant = constant
         } else {
             let constraint = NSLayoutConstraint(item: self, attribute: attribute, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: constant)
-            constraint.priority = 999
+            constraint.priority = UILayoutPriority(rawValue: 999)
             constraint.identifier = "attribute\(attribute.rawValue)"
             addConstraint(constraint)
         }
